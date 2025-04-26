@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EyoArc | Premium Game Development Assets</title>
+    <!-- Same head as ue4.html -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Modern Color Palette */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a0ca3;
@@ -17,14 +14,12 @@
             --success: #4cc9f0;
         }
         
-        /* Dark Mode Variables */
         :root.dark-mode {
             --dark: #f8f9fa;
             --light: #1a1a2e;
             --gray: #a8a8a8;
         }
         
-        /* Base Reset */
         * {
             margin: 0;
             padding: 0;
@@ -40,7 +35,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         
-        /* Dark Mode Toggle */
         .dark-mode-toggle {
             position: fixed;
             bottom: 2rem;
@@ -65,7 +59,6 @@
             background: var(--secondary);
         }
         
-        /* Navigation with Logo - Updated to include logo */
         .main-nav {
             background: var(--light);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -124,6 +117,10 @@
             position: relative;
         }
         
+        .category-link.active {
+            color: var(--primary);
+        }
+        
         .category-link:hover {
             color: var(--primary);
         }
@@ -140,191 +137,11 @@
             transition: width 0.3s ease;
         }
         
-        .category-link:hover::after {
+        .category-link:hover::after,
+        .category-link.active::after {
             width: 70%;
         }
         
-        /* YouTube Video Header Section */
-        .video-header {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            overflow: hidden;
-            background: #000;
-        }
-        
-        .video-iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        
-        .video-content {
-            position: relative;
-            z-index: 3;
-            max-width: 800px;
-            padding: 0 2rem;
-        }
-        
-        .video-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .video-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .video-search-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Rest of your existing styles remain unchanged */
-        .main-header {
-            display: none;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            padding: 1rem 0;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Logo with Animation */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .logo-container:hover {
-            transform: scale(1.05);
-        }
-        
-        .logo-img {
-            height: 50px;
-            width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-        }
-        
-        .logo-text {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2));
-        }
-        
-        /* Floating Particles Background */
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        
-        /* Modern Search Bar */
-        .search-container {
-            position: relative;
-            width: 350px;
-        }
-        
-        .search-form {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            padding: 0.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .search-form:focus-within {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        .search-input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 1rem;
-            outline: none;
-        }
-        
-        .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .search-button {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .search-button:hover {
-            background: white;
-            color: var(--secondary);
-            transform: rotate(10deg);
-        }
-        
-        /* Main Content with Floating Cards */
         .main-content {
             max-width: 1400px;
             margin: 3rem auto;
@@ -370,7 +187,6 @@
             transform: translateX(5px);
         }
         
-        /* Stunning Asset Cards */
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -482,7 +298,6 @@
             color: var(--gray);
         }
         
-        /* Floating CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             padding: 4rem 2rem;
@@ -526,7 +341,6 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
-        /* Modern Footer */
         .main-footer {
             background: var(--dark);
             color: white;
@@ -626,17 +440,7 @@
             opacity: 0.7;
         }
         
-        /* Responsive Design */
         @media (max-width: 992px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .search-container {
-                width: 100%;
-            }
-            
             .nav-container {
                 flex-direction: column;
                 align-items: flex-start;
@@ -652,10 +456,6 @@
                 justify-content: flex-start;
                 width: 100%;
             }
-            
-            .video-content h1 {
-                font-size: 2.5rem;
-            }
         }
         
         @media (max-width: 768px) {
@@ -665,14 +465,6 @@
             
             .section-title {
                 font-size: 1.5rem;
-            }
-            
-            .video-content h1 {
-                font-size: 2rem;
-            }
-            
-            .video-content p {
-                font-size: 1rem;
             }
             
             .category-link {
@@ -700,10 +492,6 @@
                 justify-content: space-between;
             }
             
-            .video-content h1 {
-                font-size: 1.8rem;
-            }
-            
             .dark-mode-toggle {
                 bottom: 1rem;
                 right: 1rem;
@@ -722,8 +510,9 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+    <title>UE5 Assets | EyoArc</title>
+</head>
 <body>
-    <!-- Navigation with Logo -->
     <nav class="main-nav">
         <div class="nav-container">
             <div class="nav-logo-container">
@@ -744,99 +533,29 @@
             </ul>
         </div>
     </nav>
-    
-    <!-- YouTube Video Header Section -->
-    <section class="video-header">
-        <!-- YouTube iframe with autoplay, mute, and modestbranding -->
-        <video 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-        autoplay 
-        muted 
-        loop 
-        playsinline
-        preload="auto"
-        >
-        <source src="./Mario - Live Wallpaper.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-        <div class="video-overlay">
-            <div class="video-content">
-                <h1>Premium Game Development Assets</h1>
-                <p>Discover high-quality assets to accelerate your game development workflow</p>
-                <div class="video-search-container">
-                    <form class="search-form" onsubmit="searchAssets(); return false;">
-                        <input type="text" class="search-input" placeholder="Search assets...">
-                        <button type="submit" class="search-button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Original Header (Hidden) -->
-    <header class="main-header">
-        <div class="particles" id="particles"></div>
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="./Images/logo.png" alt="EyoArc Logo" class="logo-img">
-                <span class="logo-text">EyoArc</span>
-            </div>
-            
-            <div class="search-container">
-                <form class="search-form" onsubmit="searchAssets(); return false;">
-                    <input type="text" class="search-input" placeholder="Search assets...">
-                    <button type="submit" class="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </header>
-    
+
     <main class="main-content">
-        <!-- Rest of your content remains exactly the same -->
         <section>
             <div class="section-header">
-                <h2 class="section-title">Featured Assets</h2>
+                <h2 class="section-title">Unreal Engine 5 Assets</h2>
                 <a href="#" class="see-all">View All <i class="fas fa-arrow-right"></i></a>
             </div>
             
             <div class="featured-grid">
                 <div class="featured-item">
                     <span class="item-badge">NEW</span>
-                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sci-Fi Pack" class="item-image">
+                    <img src="./Images/ue5_asset1.jpg" alt="UE5 Nanite Pack" class="item-image">
                     <div class="item-content">
-                        <h3 class="item-title">Advanced Sci-Fi Pack</h3>
+                        <h3 class="item-title">Nanite Assets Pack</h3>
                         <div class="item-meta">
-                            <span class="item-author">By QuantumAssets</span>
-                            <span class="item-price">Free</span>
+                            <span class="item-author">By NextGenAssets</span>
+                            <span class="item-price">$59.99</span>
                         </div>
-                        <p class="item-description">Complete set of modular sci-fi assets for UE5 with PBR materials and customizable blueprints.</p>
+                        <p class="item-description">High-poly assets optimized with Nanite technology for UE5 projects.</p>
                         <div class="item-footer">
                             <a href="#" class="item-link">View Details <i class="fas fa-external-link-alt"></i></a>
                             <div class="item-stats">
-                                <span class="stat"><i class="fas fa-download"></i> 1.2K</span>
-                                <span class="stat"><i class="fas fa-star"></i> 4.9</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="featured-item">
-                    <img src="https://images.unsplash.com/photo-1639762681297-068feec6b2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Character Creator" class="item-image">
-                    <div class="item-content">
-                        <h3 class="item-title">Pro Character Creator</h3>
-                        <div class="item-meta">
-                            <span class="item-author">By BlenderMaster</span>
-                            <span class="item-price">Free</span>
-                        </div>
-                        <p class="item-description">Advanced character creation toolkit for Blender with realistic morphs and auto-rigging system.</p>
-                        <div class="item-footer">
-                            <a href="#" class="item-link">View Details <i class="fas fa-external-link-alt"></i></a>
-                            <div class="item-stats">
-                                <span class="stat"><i class="fas fa-download"></i> 2.4K</span>
+                                <span class="stat"><i class="fas fa-download"></i> 3.5K</span>
                                 <span class="stat"><i class="fas fa-star"></i> 4.8</span>
                             </div>
                         </div>
@@ -844,63 +563,15 @@
                 </div>
                 
                 <div class="featured-item">
-                    <span class="item-badge">POPULAR</span>
-                    <img src="https://images.unsplash.com/photo-1639762681056-7a91a6a15b9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Texture Pack" class="item-image">
+                    <span class="item-badge">BEST SELLER</span>
+                    <img src="./Images/ue5_asset2.jpg" alt="UE5 Lumen Pack" class="item-image">
                     <div class="item-content">
-                        <h3 class="item-title">Mega Texture Pack</h3>
+                        <h3 class="item-title">Lumen Lighting Kit</h3>
                         <div class="item-meta">
-                            <span class="item-author">By TextureLabs</span>
-                            <span class="item-price">$29.99</span>
-                        </div>
-                        <p class="item-description">500+ high resolution PBR textures with Substance Designer files included.</p>
-                        <div class="item-footer">
-                            <a href="#" class="item-link">View Details <i class="fas fa-external-link-alt"></i></a>
-                            <div class="item-stats">
-                                <span class="stat"><i class="fas fa-download"></i> 3.7K</span>
-                                <span class="stat"><i class="fas fa-star"></i> 4.9</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section style="margin-top: 4rem;">
-            <div class="section-header">
-                <h2 class="section-title">New Releases</h2>
-                <a href="#" class="see-all">View All <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="featured-grid">
-                <div class="featured-item">
-                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="UE5 Vehicle Physics" class="item-image">
-                    <div class="item-content">
-                        <h3 class="item-title">UE5 Vehicle Physics</h3>
-                        <div class="item-meta">
-                            <span class="item-author">By CodeCraft</span>
+                            <span class="item-author">By LightWizard</span>
                             <span class="item-price">$39.99</span>
                         </div>
-                        <p class="item-description">Advanced vehicle physics system for Unreal Engine 5 with realistic handling and damage.</p>
-                        <div class="item-footer">
-                            <a href="#" class="item-link">View Details <i class="fas fa-external-link-alt"></i></a>
-                            <div class="item-stats">
-                                <span class="stat"><i class="fas fa-download"></i> 876</span>
-                                <span class="stat"><i class="fas fa-star"></i> 4.7</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="featured-item">
-                    <span class="item-badge">FREE</span>
-                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Water Shader" class="item-image">
-                    <div class="item-content">
-                        <h3 class="item-title">Stylized Water Shader</h3>
-                        <div class="item-meta">
-                            <span class="item-author">By ShaderArt</span>
-                            <span class="item-price">FREE</span>
-                        </div>
-                        <p class="item-description">Beautiful water shader for UE4/UE5 with dynamic waves and foam effects.</p>
+                        <p class="item-description">Complete lighting setup for UE5 projects using Lumen global illumination.</p>
                         <div class="item-footer">
                             <a href="#" class="item-link">View Details <i class="fas fa-external-link-alt"></i></a>
                             <div class="item-stats">
@@ -912,19 +583,19 @@
                 </div>
                 
                 <div class="featured-item">
-                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Low Poly Pack" class="item-image">
+                    <img src="./Images/ue5_asset3.jpg" alt="UE5 Open World Kit" class="item-image">
                     <div class="item-content">
-                        <h3 class="item-title">Low Poly Nature Pack</h3>
+                        <h3 class="item-title">Open World System</h3>
                         <div class="item-meta">
-                            <span class="item-author">By PolyDesign</span>
-                            <span class="item-price">$24.99</span>
+                            <span class="item-author">By WorldBuilder</span>
+                            <span class="item-price">$79.99</span>
                         </div>
-                        <p class="item-description">Complete low poly nature assets pack for stylized games in multiple formats.</p>
+                        <p class="item-description">Complete open world solution with streaming, foliage, and weather systems.</p>
                         <div class="item-footer">
                             <a href="#" class="item-link">View Details <i class="fas fa-external-link-alt"></i></a>
                             <div class="item-stats">
-                                <span class="stat"><i class="fas fa-download"></i> 1.8K</span>
-                                <span class="stat"><i class="fas fa-star"></i> 4.6</span>
+                                <span class="stat"><i class="fas fa-download"></i> 2.8K</span>
+                                <span class="stat"><i class="fas fa-star"></i> 4.7</span>
                             </div>
                         </div>
                     </div>
@@ -932,13 +603,9 @@
             </div>
         </section>
         
-        <div class="cta-section">
-            <h3 class="cta-title">Ready to Enhance Your Game Development?</h3>
-            <p class="cta-text">Join thousands of developers using EyoArc assets to create stunning games faster than ever before.</p>
-            <a href="#" class="cta-button">Browse All Assets</a>
-        </div>
+        <!-- Same CTA and footer as ue4.html -->
     </main>
-    
+
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-col">
@@ -958,11 +625,11 @@
             <div class="footer-col">
                 <h4 class="footer-heading">Categories</h4>
                 <ul class="footer-links">
-                    <li class="footer-link-item"><a href="#" class="footer-link">Unreal Engine 4</a></li>
-                    <li class="footer-link-item"><a href="#" class="footer-link">Unreal Engine 5</a></li>
-                    <li class="footer-link-item"><a href="#" class="footer-link">Blender Assets</a></li>
-                    <li class="footer-link-item"><a href="#" class="footer-link">Texture Packs</a></li>
-                    <li class="footer-link-item"><a href="#" class="footer-link">3D Models</a></li>
+                    <li class="footer-link-item"><a href="./ue4.html" class="footer-link">Unreal Engine 4</a></li>
+                    <li class="footer-link-item"><a href="./ue5.html" class="footer-link">Unreal Engine 5</a></li>
+                    <li class="footer-link-item"><a href="./blender.html" class="footer-link">Blender Assets</a></li>
+                    <li class="footer-link-item"><a href="./textures.html" class="footer-link">Texture Packs</a></li>
+                    <li class="footer-link-item"><a href="./models.html" class="footer-link">3D Models</a></li>
                 </ul>
             </div>
             
@@ -993,18 +660,16 @@
             <p>&copy; 2025 EyoArc. All rights reserved. | Terms of Service | Privacy Policy</p>
         </div>
     </footer>
-    
-    <!-- Dark Mode Toggle Button -->
+
     <button class="dark-mode-toggle" id="darkModeToggle">
         <i class="fas fa-moon"></i>
     </button>
-    
+
     <script>
         // Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
         
-        // Check for saved user preference
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
             darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
@@ -1022,58 +687,28 @@
             }
         });
         
-        // Floating particles animation
-        function createParticles() {
-            const particles = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random properties
-                const size = Math.random() * 5 + 2;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const delay = Math.random() * 5;
-                const duration = Math.random() * 10 + 10;
-                const opacity = Math.random() * 0.4 + 0.1;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}%`;
-                particle.style.top = `${posY}%`;
-                particle.style.opacity = opacity;
-                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
-                
-                particles.appendChild(particle);
-            }
-        }
-        
         // Search functionality
         function searchAssets() {
             const searchTerm = document.querySelector('.search-input').value.trim();
             if (searchTerm) {
                 alert(`Searching for: "${searchTerm}"\nIn a real implementation, this would redirect to search results.`);
-                // window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
             } else {
                 alert('Please enter a search term');
             }
         }
         
-        // Initialize particles and event listeners
         document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
-            
-            // Add event listener for Enter key
-            document.querySelector('.search-input').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    searchAssets();
-                }
-            });
+            const searchInput = document.querySelector('.search-input');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchAssets();
+                    }
+                });
+            }
         });
         
-        // Add floating animation
+        // Floating animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes float {
@@ -1093,5 +728,6 @@
         `;
         document.head.appendChild(style);
     </script>
+    <!-- Same footer and scripts as ue4.html -->
 </body>
 </html>

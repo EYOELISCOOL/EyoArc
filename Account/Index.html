@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyoArc | Premium Game Development Assets</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="./images/logo.png" alt="EyoArc Logo" class="logo">
+                    <span>EyoArc</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./assets/browse.html">Assets</a></li>
+                    <li><a href="./community/">Community</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <div class="search-container">
+                    <form action="./assets/browse.html" method="GET">
+                        <input type="text" placeholder="Search assets..." name="q">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="auth-buttons">
+                    <a href="./account/login.html" class="btn btn-outline">Login</a>
+                    <a href="./account/register.html" class="btn btn-primary">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Premium Assets for Game Developers</h1>
+            <p>High-quality UE4, UE5, Blender assets to accelerate your development</p>
+            <div class="cta-buttons">
+                <a href="assets/browse.html" class="btn btn-primary btn-large">Browse Assets</a>
+                <a href="community/" class="btn btn-secondary btn-large">Join Community</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Assets -->
+    <section class="featured-assets">
+        <div class="container">
+            <h2 class="section-title">Featured Assets</h2>
+            <div class="asset-grid">
+                <!-- Asset Card 1 -->
+                <div class="asset-card">
+                    <div class="asset-badge">NEW</div>
+                    <div class="asset-image">
+                        <img src="./images/assets/sci-fi-pack.jpg" alt="Sci-Fi Environment Pack">
+                        <div class="asset-overlay">
+                            <a href="./assets/detail.html?id=1" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="asset-info">
+                        <h3><a href="./assets/detail.html?id=1">Sci-Fi Environment Pack</a></h3>
+                        <div class="asset-meta">
+                            <span class="price">$49.99</span>
+                            <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="asset-stats">
+                            <span><i class="fas fa-download"></i> 1,245</span>
+                            <span><i class="fas fa-cube"></i> UE5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More asset cards... -->
+            </div>
+            <div class="section-footer">
+                <a href="./assets/browse.html" class="btn btn-outline">View All Assets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Highlights -->
+    <section class="community-highlights">
+        <div class="container">
+            <h2 class="section-title">Community Discussions</h2>
+            <div class="discussion-grid">
+                <!-- Discussion Card 1 -->
+                <div class="discussion-card">
+                    <div class="discussion-header">
+                        <img src="images/avatars/user1.jpg" alt="User Avatar" class="user-avatar">
+                        <div class="user-info">
+                            <span class="username">GameDevPro</span>
+                            <span class="post-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <h3><a href="community/thread.html?id=123">Best practices for UE5 environment design</a></h3>
+                    <p class="excerpt">I've been working on large open worlds in UE5 and wanted to share some techniques for optimizing...</p>
+                    <div class="discussion-stats">
+                        <span><i class="fas fa-comment"></i> 24 replies</span>
+                        <span><i class="fas fa-eye"></i> 356 views</span>
+                    </div>
+                </div>
+                
+                <!-- More discussion cards... -->
+            </div>
+            <div class="section-footer">
+                <a href="community/" class="btn btn-outline">View All Discussions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="./images/logo-white.png" alt="EyoArc Logo">
+                        <span>EyoArc</span>
+                    </div>
+                    <p class="footer-about">Premium game development assets marketplace for Unreal Engine, Blender, and more.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="./assets/browse.html?category=ue4">Unreal Engine 4</a></li>
+                        <li><a href="./assets/browse.html?category=ue5">Unreal Engine 5</a></li>
+                        <li><a href="./assets/browse.html?category=blender">Blender</a></li>
+                        <li><a href="./assets/browse.html?category=textures">Textures</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="community/">Forums</a></li>
+                        <li><a href="#">Developer Spotlights</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 EyoArc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
